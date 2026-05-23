@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 22:14:16
  * @Description: 
- * @LastEditTime: 2026-05-23 22:29:49
+ * @LastEditTime: 2026-05-23 23:28:40
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
@@ -14,11 +14,16 @@ extern "C" {
 #endif
 
 typedef struct sensor_ops {
-    const char *name;
-    void (*init)(void);
-    void (*read)(float *temperature, float *humidity);
-    struct sensor_ops *next;
+    void (*init)(void *self);
+    void (*read)(void *self, float *temperature, float *humidity);
 } sensor_ops_t;
+
+/* 接口放最前面，sensor_ops地址和sensor地址相同 */
+typedef struct sensor  {
+    const sensor_ops_t *ops;
+    const char *name;
+    struct sensor *next; // 传感器链表地址
+} sensor_t;
 
 typedef enum {
     SENSOR_DHT11 = 0,
@@ -26,9 +31,9 @@ typedef enum {
 }sensor_type_t;
 
 
-void sensor_drv_register(sensor_ops_t *drv);
+void sensor_drv_register(sensor_t *drv);
 
-sensor_ops_t* sensor_factory_find(const char *name);
+sensor_t* sensor_factory_find(const char *name);
 int sensor_get_count(void);
 void sensor_dump(void);
 void sensor_loop(void);;
