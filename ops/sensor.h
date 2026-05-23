@@ -1,0 +1,39 @@
+/*
+ * @Author: zenghw
+ * @Date: 2026-05-23 22:14:16
+ * @Description: 
+ * @LastEditTime: 2026-05-23 22:29:49
+ * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
+ */
+
+#ifndef SENSOR_H
+#define SENSOR_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct sensor_ops {
+    const char *name;
+    void (*init)(void);
+    void (*read)(float *temperature, float *humidity);
+    struct sensor_ops *next;
+} sensor_ops_t;
+
+typedef enum {
+    SENSOR_DHT11 = 0,
+    SENSOR_MAX,
+}sensor_type_t;
+
+
+void sensor_drv_register(sensor_ops_t *drv);
+
+sensor_ops_t* sensor_factory_find(const char *name);
+int sensor_get_count(void);
+void sensor_dump(void);
+void sensor_loop(void);;
+
+#ifdef __cplusplus
+}
+#endif
+#endif

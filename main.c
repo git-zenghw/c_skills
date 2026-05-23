@@ -8,6 +8,7 @@
 
 #include "common.h"
 #include "drv/register.h"
+#include "ops/sensor.h"
 #include "task.h"
 #include "timer.h"
 #include "register.h"
@@ -15,7 +16,8 @@
 
 #define TEST_TASK    0
 #define TEST_TIMER   0
-#define TEST_REGISTER  1
+#define TEST_REGISTER  0
+#define TEST_SENSOR  1
 
 int main(int argc, char *argv[])
 {
@@ -31,6 +33,10 @@ int main(int argc, char *argv[])
 
 #if TEST_REGISTER
    register_loop();
+#endif
+
+#if TEST_SENSOR
+   sensor_loop();
 #endif
 
     return 0;
