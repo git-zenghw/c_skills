@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 16:08:20
  * @Description: 公共接口头文件，提供错误码、调试接口等
- * @LastEditTime: 2026-05-23 17:20:34
+ * @LastEditTime: 2026-05-23 18:13:15
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
@@ -62,9 +62,9 @@ extern "C" {
 
 #else
 // 关闭日志时，宏为空
-#define LOG_INFO(fmt, ...)
-#define LOG_WARN(fmt, ...)
-#define LOG_ERROR(fmt, ...)
+#define log_info(fmt, ...)
+#define log_warn(fmt, ...)
+#define log_error(fmt, ...)
 #endif
 
 #ifdef __cplusplus
