@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 22:18:08
  * @Description: 
- * @LastEditTime: 2026-05-23 23:24:43
+ * @LastEditTime: 2026-05-23 23:37:36
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
@@ -41,7 +41,7 @@
 void dht11_init(void *self)
 {
     dht11_t *dev = (dht11_t *)self;
-    (void *)dev;
+    (void )dev;
     // 初始化DHT11传感器
     log_info("DHT11传感器已初始化");
 }

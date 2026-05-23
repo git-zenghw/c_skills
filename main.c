@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-22 23:21:24
  * @Description: 
- * @LastEditTime: 2026-05-23 22:08:49
+ * @LastEditTime: 2026-05-24 00:18:47
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
@@ -36,7 +36,8 @@ int main(int argc, char *argv[])
 #endif
 
 #if TEST_SENSOR
-   sensor_loop();
+   // sensor_loop();
+   sensor_mock_test();
 #endif
 
     return 0;

@@ -2,13 +2,14 @@
  * @Author: zenghw
  * @Date: 2026-05-23 22:14:01
  * @Description: 
- * @LastEditTime: 2026-05-23 23:30:02
+ * @LastEditTime: 2026-05-24 00:15:54
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
 #include <string.h>
 #include "common.h"
 #include "sensor.h"
+#include "sensor_mock.h"
 
 static sensor_t *gs_sensor_list = NULL;
 
@@ -64,4 +65,23 @@ void sensor_loop(void)
     float humi = 80.0f;
     sensor->ops->init(sensor);
     sensor->ops->read(sensor, &temp, &humi);
+}
+
+void sensor_mock_test(void)
+{
+    const char *sensor_name = "SENSOR_MOCK";
+    sensor_t *sensor = sensor_factory_find(sensor_name);
+
+    if (NULL == sensor) {
+        log_err("failed find sensor: %s", sensor_name);
+        return;
+    }
+
+    float t, h;
+    sensor->ops->read(sensor, &t, &h);
+    log_info("read succ, t:%f, h:%f", t, h);
+
+    mock_set_read_fail_flag(1);
+    sensor->ops->read(sensor, &t, &h);
+
 }

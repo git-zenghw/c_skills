@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 22:14:16
  * @Description: 
- * @LastEditTime: 2026-05-23 23:28:40
+ * @LastEditTime: 2026-05-24 00:16:41
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
@@ -22,7 +22,7 @@ typedef struct sensor_ops {
 typedef struct sensor  {
     const sensor_ops_t *ops;
     const char *name;
-    struct sensor *next; // 传感器链表地址
+    struct sensor *next; // 传感器链表地址, 也可以用list_node_t 侵入式链表
 } sensor_t;
 
 typedef enum {
@@ -37,6 +37,7 @@ sensor_t* sensor_factory_find(const char *name);
 int sensor_get_count(void);
 void sensor_dump(void);
 void sensor_loop(void);;
+void sensor_mock_test(void);
 
 #ifdef __cplusplus
 }
