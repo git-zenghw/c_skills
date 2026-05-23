@@ -2,17 +2,20 @@
  * @Author: zenghw
  * @Date: 2026-05-22 23:21:24
  * @Description: 
- * @LastEditTime: 2026-05-23 18:26:34
+ * @LastEditTime: 2026-05-23 22:08:49
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
 #include "common.h"
+#include "drv/register.h"
 #include "task.h"
 #include "timer.h"
+#include "register.h"
 
 
-#define TEST_TASK    1
+#define TEST_TASK    0
 #define TEST_TIMER   0
+#define TEST_REGISTER  1
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +27,10 @@ int main(int argc, char *argv[])
 
 #if TEST_TIMER
    timer_loop();
+#endif
+
+#if TEST_REGISTER
+   register_loop();
 #endif
 
     return 0;
