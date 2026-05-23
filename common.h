@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 16:08:20
  * @Description: 公共接口头文件，提供错误码、调试接口等
- * @LastEditTime: 2026-05-23 16:16:54
+ * @LastEditTime: 2026-05-23 17:20:34
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
@@ -12,6 +12,11 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+#include <stdio.h>
+#include <stdint.h>
+
+#define OBJECT_HEAD_ADDR(type, num, ptr) \
+    (type*)((char*)(ptr) - offsetof(type, num))
 
 // ==================== 颜色定义 ANSI 转义序列 ====================
 // 终端颜色控制，Linux / macOS 通用

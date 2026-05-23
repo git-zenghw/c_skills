@@ -2,12 +2,10 @@
  * @Author: zenghw
  * @Date: 2026-05-23 15:37:41
  * @Description: 
- * @LastEditTime: 2026-05-23 16:36:47
+ * @LastEditTime: 2026-05-23 17:22:11
  * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
-#include <stdio.h>
-#include <stdint.h>
 #include <stddef.h>
 #include "common.h"
 #include "list.h"
@@ -19,14 +17,11 @@ typedef struct task {
     list_node_t node;
 } task_t;
 
-#define TASK_HEAD_ADDR(type, num, ptr) \
-    (type*)((char*)(ptr) - offsetof(type, num))
-
 static void dump_task(list_node_t *head)
 {
     list_node_t *tmp_node = head->next;
     while (tmp_node != head) {
-        task_t *task = TASK_HEAD_ADDR(task_t, node, tmp_node);
+        task_t *task = OBJECT_HEAD_ADDR(task_t, node, tmp_node);
         log_info("task id:%d, task name:%s", task->id, task->name);
         tmp_node = tmp_node->next;
     }
