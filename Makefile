@@ -15,9 +15,9 @@ APP_DIR := $(TOP_DIR)/app
 PRT_DIR := $(TOP_DIR)/prt
 DRV_DIR	:= $(TOP_DIR)/drv
 OPS_DIR := $(TOP_DIR)/ops
-STU_DIR := $(TOP_DIR)/struct_skill
+STA_DIR := $(TOP_DIR)/state
 LIST_DIR := $(TOP_DIR)/list
-PROJECT_DIR := . $(OPS_DIR) $(STU_DIR) $(LIST_DIR) $(APP_DIR) $(PRT_DIR) $(DRV_DIR)
+PROJECT_DIR := . $(OPS_DIR) $(STA_DIR) $(LIST_DIR) $(APP_DIR) $(PRT_DIR) $(DRV_DIR)
 
 # c源文件
 C_SRC_DIR := $(PROJECT_DIR)
@@ -38,7 +38,7 @@ C_BUILD_OBJS := $(patsubst %.$(C_SUFFIX), $(OBJS_DIR)/%.$(OBJ_SUFFIX), $(C_SRC))
 INC_DIR := -I. \
 	   -I$(OPS_DIR) \
 	   -I$(LIST_DIR) \
-	   -I$(STU_DIR) \
+	   -I$(STA_DIR) \
 	   -I$(APP_DIR) \
 	   -I$(PRT_DIR) \
 	   -I$(DRV_DIR)
