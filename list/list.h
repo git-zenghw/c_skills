@@ -3,7 +3,6 @@
  * @Date: 2026-05-23 15:08:40
  * @Description: 
  * @LastEditTime: 2026-05-23 16:05:49
- * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
 #ifndef LIST_H

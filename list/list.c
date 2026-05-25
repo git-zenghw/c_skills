@@ -2,7 +2,6 @@
  * @Author: zenghw
  * @Date: 2026-05-23 15:07:59
  * @LastEditTime: 2026-05-23 17:17:11
- * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
 #include "list.h"

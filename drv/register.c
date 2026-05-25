@@ -3,7 +3,6 @@
  * @Date: 2026-05-23 19:46:45
  * @Description: 
  * @LastEditTime: 2026-05-23 22:10:43
- * Copyright (c) 2023 by 汇创智控科技有限公司, All Rights Reserved
  */
 
  #include "common.h"
