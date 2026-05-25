@@ -46,7 +46,7 @@ INC_DIR := -I. \
 C_FLAGS += -fpic -Wall
 
 # 库
-LIBS := 
+LIBS :=  -lpthread -lrt
 LIBS_DIR := -L$(TOP_DIR) 
 
 .PHONY: all  clean 
