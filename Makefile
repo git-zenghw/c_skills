@@ -17,7 +17,8 @@ DRV_DIR	:= $(TOP_DIR)/drv
 OPS_DIR := $(TOP_DIR)/ops
 STA_DIR := $(TOP_DIR)/state
 LIST_DIR := $(TOP_DIR)/list
-PROJECT_DIR := . $(OPS_DIR) $(STA_DIR) $(LIST_DIR) $(APP_DIR) $(PRT_DIR) $(DRV_DIR)
+TEST_DIR := $(TOP_DIR)/test
+PROJECT_DIR := . $(OPS_DIR) $(STA_DIR) $(LIST_DIR) $(APP_DIR) $(PRT_DIR) $(DRV_DIR) $(TEST_DIR)
 
 # c源文件
 C_SRC_DIR := $(PROJECT_DIR)
@@ -41,7 +42,8 @@ INC_DIR := -I. \
 	   -I$(STA_DIR) \
 	   -I$(APP_DIR) \
 	   -I$(PRT_DIR) \
-	   -I$(DRV_DIR)
+	   -I$(DRV_DIR) \
+	   -I$(TEST_DIR)
 
 C_FLAGS += -fpic -Wall
 
