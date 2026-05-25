@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 17:04:54
  * @Description: 
- * @LastEditTime: 2026-05-25 15:19:17
+ * @LastEditTime: 2026-05-25 16:35:52
  */
 #include <stddef.h>
 #include "common.h"
@@ -31,7 +31,9 @@ static void dump_timer(list_node_t *head)
 
 void timer_init(void)
 {
+    #if !TASK_TICK_LOOP
     event_post(EVT_TIMER);
+    #endif
 }
 
 void timer_loop(void)

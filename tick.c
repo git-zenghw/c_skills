@@ -2,15 +2,17 @@
  * @Author: zenghw
  * @Date: 2026-05-25 15:25:52
  * @Description: 
- * @LastEditTime: 2026-05-25 15:56:09
+ * @LastEditTime: 2026-05-25 16:33:36
  */
 
 #include "common.h"
+#include "main_loop.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <pthread.h>
 #include <sys/time.h>
 #include <errno.h>
+#include "main_loop.h"
 
 #define TICK_MS    1       // 1ms 一个tick（可修改）
 static volatile uint32_t gs_sys_tick = 0;  // 全局系统tick（volatile禁止编译器优化）
@@ -65,6 +67,9 @@ static void* gs_sys_tick_thread(void* arg)
         pthread_mutex_lock(&tick_mutex);
         gs_sys_tick++;
         pthread_mutex_unlock(&tick_mutex);
+        #if TASK_TICK_LOOP
+        update_task_state();
+        #endif
     }
     return NULL;
 }

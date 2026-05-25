@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-22 23:21:24
  * @Description: 
- * @LastEditTime: 2026-05-25 15:56:53
+ * @LastEditTime: 2026-05-25 16:35:19
  */
 
 #include "common.h"
@@ -16,7 +16,7 @@
 #include "led.h"
 #include "main_loop.h"
 
-#define TEST_LOOP    0
+#define TEST_LOOP    1
 #define TEST_TASK    0
 #define TEST_TIMER   0
 #define TEST_REGISTER  0
