@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-24 21:35:32
  * @Description: 以LED模块(仅输出）为例，抽象硬件资源
- * @LastEditTime: 2026-05-24 22:17:28
+ * @LastEditTime: 2026-05-25 14:57:10
  */
 #include <unistd.h>
 #include "gpio.h"
@@ -61,7 +61,7 @@ void led_toggle(led_handle_t *led)
     }
 }
 
-void led_loop(void)
+void led_test(void)
 {
     static led_handle_t s_rled = {
         .gpio = {

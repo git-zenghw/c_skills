@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-void register_loop(void);
+void register_test(void);
 
 #ifdef __cplusplus
 }

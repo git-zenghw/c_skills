@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-24 12:20:01
  * @Description: 
- * @LastEditTime: 2026-05-24 16:04:05
+ * @LastEditTime: 2026-05-25 15:00:14
  */
 #include <unistd.h>
 #include "common.h"
@@ -132,7 +132,7 @@ void traffic_trigger_green_button(traffic_light_t *light)
     traffic_dispatch(light, EVENT_GREEN_BUTTON);
 }
 
-void traffic_loop(void)
+void traffic_test(void)
 {
     uint32_t loop_count = 0;
     traffic_light_t light = {TRAFFIC_LIGHT_RED, 10, 1};

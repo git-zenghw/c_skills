@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 19:46:45
  * @Description: 
- * @LastEditTime: 2026-05-23 22:10:43
+ * @LastEditTime: 2026-05-25 14:57:25
  */
 
  #include "common.h"
@@ -19,7 +19,7 @@ uint32_t addr[4] ={0};
 static uart_addr_t *uart_addr = (uart_addr_t *)&addr;
 
 
-void  register_loop(void)
+void register_test(void)
 {
     addr[0] = 0x11223344;
     addr[3] = 0xaabbccdd;

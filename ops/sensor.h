@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 22:14:16
  * @Description: 
- * @LastEditTime: 2026-05-24 00:16:41
+ * @LastEditTime: 2026-05-25 15:00:45
  */
 
 #ifndef SENSOR_H
@@ -35,7 +35,7 @@ void sensor_drv_register(sensor_t *drv);
 sensor_t* sensor_factory_find(const char *name);
 int sensor_get_count(void);
 void sensor_dump(void);
-void sensor_loop(void);;
+void sensor_test(void);;
 void sensor_mock_test(void);
 
 #ifdef __cplusplus

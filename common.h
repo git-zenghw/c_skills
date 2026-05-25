@@ -66,6 +66,9 @@ extern "C" {
 #define log_error(fmt, ...)
 #endif
 
+
+
+
 #ifdef __cplusplus
 }
 #endif

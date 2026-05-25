@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-22 23:21:24
  * @Description: 
- * @LastEditTime: 2026-05-24 22:15:41
+ * @LastEditTime: 2026-05-25 15:14:35
  */
 
 #include "common.h"
@@ -13,19 +13,23 @@
 #include "timer.h"
 #include "register.h"
 #include "led.h"
+#include "main_loop.h"
 
-
+#define TEST_LOOP    1
 #define TEST_TASK    0
 #define TEST_TIMER   0
 #define TEST_REGISTER  0
 #define TEST_SENSOR  0
 #define TEST_TRAFFIC   0
-#define TEST_LED        1
+#define TEST_LED       0
 
 int main(int argc, char *argv[])
 {
 
     log_info("linux c skills demo");
+#if TEST_LOOP
+    main_loop_test();
+#endif
 #if TEST_TASK
     task_loop();
 #endif
@@ -35,20 +39,20 @@ int main(int argc, char *argv[])
 #endif
 
 #if TEST_REGISTER
-   register_loop();
+   register_test();
 #endif
 
 #if TEST_SENSOR
-   // sensor_loop();
+   // sensor_test();
    sensor_mock_test();
 #endif
 
 #if TEST_TRAFFIC
-    traffic_loop();
+    traffic_test();
 #endif
 
 #if TEST_LED
-    led_loop();
+    led_test();
 #endif
 
     return 0;

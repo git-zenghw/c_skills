@@ -56,7 +56,7 @@ void sensor_dump(void)
     }
 }
 
-void sensor_loop(void)
+void sensor_test(void)
 {
     int sensor_count = sensor_get_count();
     sensor_t *sensor = sensor_factory_find("DHT11");

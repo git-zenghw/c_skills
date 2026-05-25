@@ -13,7 +13,7 @@ extern "C" {
 #endif  
 
 
-void traffic_loop(void);
+void traffic_test(void);
 
 
 #ifdef __cplusplus

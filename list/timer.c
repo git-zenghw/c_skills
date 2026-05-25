@@ -2,11 +2,13 @@
  * @Author: zenghw
  * @Date: 2026-05-23 17:04:54
  * @Description: 
- * @LastEditTime: 2026-05-23 18:19:01
+ * @LastEditTime: 2026-05-25 15:19:17
  */
 #include <stddef.h>
 #include "common.h"
 #include "list.h"
+#include "timer.h"
+#include "main_loop.h"
 
 typedef struct timer {
     uint32_t period;
@@ -25,6 +27,11 @@ static void dump_timer(list_node_t *head)
         log_info("timer period:%d, duty:%d", timer->period, timer->duty);
         tmp_node = tmp_node->next;
     }
+}
+
+void timer_init(void)
+{
+    event_post(EVT_TIMER);
 }
 
 void timer_loop(void)
