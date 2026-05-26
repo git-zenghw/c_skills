@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-23 16:08:20
  * @Description: 公共接口头文件，提供错误码、调试接口等
- * @LastEditTime: 2026-05-23 18:13:15
+ * @LastEditTime: 2026-05-25 21:46:02
  */
 
 #ifndef COMMON_H
@@ -66,6 +66,15 @@ extern "C" {
 #define log_error(fmt, ...)
 #endif
 
+
+/* 
+    错误码定义 
+    1、共32bit，高16bit表示默认类型，低16bit表示模块具体错误类型
+    2、0表示成功
+    3、接口的错误码通过返回值提供，需要返回有效数据均通过参数返回
+*/
+#define NO_ERROR  (0)
+#define SUCCESS  NO_ERROR 
 
 
 
