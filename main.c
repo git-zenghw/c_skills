@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-22 23:21:24
  * @Description: 
- * @LastEditTime: 2026-05-27 00:30:42
+ * @LastEditTime: 2026-05-27 02:44:13
  */
 
 #include "common.h"
@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
     sys_tick_init();
     log_info("linux c skills demo");
 #if TEST_SIGNAL
-    signal_test_init();
     signal_test_task();
 #endif
 #if TEST_RB

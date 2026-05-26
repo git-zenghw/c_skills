@@ -2,7 +2,7 @@
  * @Author: zenghw
  * @Date: 2026-05-27 00:03:57
  * @Description: 信号槽测试
- * @LastEditTime: 2026-05-27 02:40:13
+ * @LastEditTime: 2026-05-27 02:45:50
  */
 
 #include "common.h"
@@ -37,22 +37,8 @@ void logger_record(float temp)
 	/* 实际项目中写入Flash或SD卡 */
 }
 
-/* ========== 系统初始化 ========== */
-void signal_test_init(void)
-{
-	/* 各模块自行注册关心的信号 */
-    //CONNECT(temp_updated, lcd_show_temp, NULL);
-    //CONNECT(temp_updated, alarm_check, NULL);
-    //CONNECT(temp_updated, logger_record, NULL);
-}
-
-/* ========== 温度采集任务 ========== */
 void signal_test_task(void)
 {
-	//float current_temp = 90.0f; //read_sensor(); /* 读取传感器 */
-	//EMIT(temp_updated, &current_temp); /* 发出信号，完事 */
-
-
 	DEFINE_SIGNAL(temp, float);
 	temp_signal_t temp_sig;
 	SIGNAL_INIT(temp, &temp_sig);
