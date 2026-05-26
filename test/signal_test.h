@@ -10,6 +10,6 @@
 
 
 void signal_test_init(void);
-void signal_testss_task(void);
+void signal_test_task(void);
 
 #endif
